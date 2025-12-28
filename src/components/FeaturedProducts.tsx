@@ -1,42 +1,12 @@
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const products = [
-  {
-    id: 1,
-    name: "Smart 4K Ultra HD TV",
-    price: 799.99,
-    originalPrice: 999.99,
-    image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500&h=500&fit=crop",
-    category: "Television",
-  },
-  {
-    id: 2,
-    name: "Wireless Noise-Canceling Headphones",
-    price: 249.99,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop",
-    category: "Audio",
-  },
-  {
-    id: 3,
-    name: "Smart Home Speaker",
-    price: 129.99,
-    originalPrice: 179.99,
-    image: "https://images.unsplash.com/photo-1543512214-318c7553f230?w=500&h=500&fit=crop",
-    category: "Smart Home",
-  },
-  {
-    id: 4,
-    name: "Professional Blender Pro",
-    price: 349.99,
-    image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=500&h=500&fit=crop",
-    category: "Kitchen",
-  },
-];
+import { useProducts } from "@/hooks/useProducts";
 
 const FeaturedProducts = () => {
+  const { data: products, isLoading } = useProducts(true);
+
   return (
     <section className="py-20 bg-secondary/30">
       <div className="container">
@@ -58,11 +28,25 @@ const FeaturedProducts = () => {
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} {...product} />
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {products?.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                price={product.price}
+                originalPrice={product.original_price}
+                image={product.image_url}
+                category={product.categories?.name || null}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
