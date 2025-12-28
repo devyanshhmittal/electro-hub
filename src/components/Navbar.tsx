@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, Gift, Info, Phone, ShoppingCart, User, LogOut } from "lucide-react";
+import { Home, Gift, Info, Phone, ShoppingCart, User, LogOut, LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCart } from "@/hooks/useCart";
+import { useIsManager } from "@/hooks/useUserRole";
 
 const navLinks = [
   { to: "/", label: "HOME", icon: Home },
@@ -15,6 +16,7 @@ const Navbar = () => {
   const location = useLocation();
   const { user, signOut } = useAuth();
   const { cartCount } = useCart();
+  const { isManager } = useIsManager();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -58,6 +60,14 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2">
+          {isManager && (
+            <Link to="/manager">
+              <Button variant="outline" size="sm" className="rounded-full">
+                <LayoutDashboard className="h-4 w-4" />
+                <span className="hidden sm:inline">Dashboard</span>
+              </Button>
+            </Link>
+          )}
           {user ? (
             <>
               <span className="hidden sm:inline text-sm text-muted-foreground">
