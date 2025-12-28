@@ -165,7 +165,7 @@ const Auth = () => {
                 </Button>
               </form>
 
-              <div className="mt-6 text-center">
+              <div className="mt-6 text-center space-y-4">
                 <button
                   type="button"
                   onClick={() => setIsLogin(!isLogin)}
@@ -175,6 +175,25 @@ const Auth = () => {
                     ? "Don't have an account? Sign up"
                     : "Already have an account? Sign in"}
                 </button>
+
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t border-border" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-card px-2 text-muted-foreground">Or</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-secondary/50 border border-border">
+                  <div className="flex items-center gap-2 justify-center mb-2">
+                    <User className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium">Manager Access</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Managers can sign in with their credentials above to access the dashboard
+                  </p>
+                </div>
               </div>
             </div>
           </div>
