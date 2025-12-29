@@ -64,7 +64,7 @@ Uttar Pradesh 201310
               </li>
               <li className="flex items-center gap-3 text-background/70 text-sm">
                 <Phone className="h-4 w-4 text-primary" />
-                +1 (555) 123-4567
+                +91 782721xxxx 
               </li>
               <li className="flex items-center gap-3 text-background/70 text-sm">
                 <Mail className="h-4 w-4 text-primary" />
