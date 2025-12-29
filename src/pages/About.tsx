@@ -12,7 +12,7 @@ const features = [
   {
     icon: Truck,
     title: "Fast Delivery",
-    description: "Free shipping on orders over $99. Express delivery available.",
+    description: "Free shipping on orders over Rs.1000. Express delivery available.",
   },
   {
     icon: Headphones,
