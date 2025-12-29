@@ -6,21 +6,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { Helmet } from "react-helmet-async";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
-
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Message sent! We'll get back to you soon.");
   };
-
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Contact Us - ElectroHub</title>
-        <meta
-          name="description"
-          content="Get in touch with ElectroHub. We're here to help with any questions about our products or services."
-        />
+        <meta name="description" content="Get in touch with ElectroHub. We're here to help with any questions about our products or services." />
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -48,7 +42,11 @@ const Contact = () => {
                         Our Location
                       </h3>
                       <p className="text-muted-foreground">
-                        123 Tech Street, Digital City, DC 12345
+                        Plot Nos 8, 11,
+
+TechZone 2, Greater Noida,
+
+Uttar Pradesh 201310
                       </p>
                     </div>
                   </div>
@@ -95,11 +93,7 @@ const Contact = () => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Message</label>
-                    <Textarea
-                      placeholder="Tell us more about your inquiry..."
-                      rows={5}
-                      required
-                    />
+                    <Textarea placeholder="Tell us more about your inquiry..." rows={5} required />
                   </div>
                   <Button type="submit" size="lg" className="w-full rounded-full">
                     Send Message
@@ -112,8 +106,6 @@ const Contact = () => {
         </main>
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Contact;
