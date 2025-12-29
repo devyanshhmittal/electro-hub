@@ -59,7 +59,7 @@ Uttar Pradesh 201310
                       <h3 className="font-display font-semibold text-lg mb-1">
                         Phone Number
                       </h3>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">+91 782721xxxx</p>
                     </div>
                   </div>
 
