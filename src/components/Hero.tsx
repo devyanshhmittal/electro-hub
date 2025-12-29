@@ -7,10 +7,9 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">WELCOME TO
-EMITTAL ELECTRICAL
-
-STORE<br />
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">WELCOME TO 
+ELECTRO
+HUB<br />
                 <span className="text-gradient italic">ELECTRO</span>
                 <br />
                 <span className="text-gradient italic">HUB</span>
