@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import heroImage from "@/assets/hero-electronics.png";
 const Hero = () => {
   return <section className="relative min-h-[85vh] flex items-center">
       <div className="container">
@@ -44,15 +45,12 @@ const Hero = () => {
         }}>
             <div className="relative aspect-square">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/40 rounded-3xl transform rotate-3"></div>
-              <div className="absolute inset-4 bg-gradient-to-tl from-primary/10 to-secondary rounded-3xl flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-32 h-32 mx-auto rounded-2xl bg-gradient-primary flex items-center justify-center shadow-hover">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <p className="font-display text-xl font-semibold text-foreground/80">Premium Electronics</p>
-                </div>
+              <div className="absolute inset-4 bg-gradient-to-tl from-primary/10 to-secondary rounded-3xl overflow-hidden">
+                <img 
+                  src={heroImage} 
+                  alt="Premium Electronics Store" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
